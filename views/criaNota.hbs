@@ -1,16 +1,38 @@
-<h2>Criação de uma nova nota de texto</h2>
+<nav class="navbar">
+  <div class="container-fluid justify-content-start">
+    <span class="navbar-brand mb-0 h1">Notas</span>
+    <div class="" id="navbarNav">
+      <ul class="navbar-nav d-flex flex-row gap-3">
+        <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="/sobre" class="nav-link">Sobre</a></li>
+        <li class="nav-item"><a href="/nota/cria" class="nav-link">Criar nota</a></li>
+        <li class="nav-item"><a href="/nota/cria/teste" class="nav-link">Criar nota de teste</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<h2 class="mb-5">Criação de uma nova nota de texto</h2>
 <form method="POST" action="/nota/cria">
-  <p><label for="chave">Chave</label></p>
-  <p><input type="text" name="chave" size="30" /></p>
+  <div class="mb-3">
+    <label class="form-label" for="chave">Chave</label>
+    <input class="form-control" type="text" name="chave" size="30" />
+  </div>
+  <div class="mb-3">
+    <label class="form-label" for="titulo">Título</label>
+    <input class="form-control" type="text" name="titulo" size="60" />
+  </div>
+  <div class="mb-3">
+    <label class="form-label" for="importancia">Importância</label>
+    <input class="form-control" type="number" name="importancia" max="5" min="1" size="1" />
+  </div>
+  <div class="mb-4">
+    <label class="form-label" for="texto">Texto da Nota</label>
+    <textarea class="form-control" rows="5" cols="57" name="texto"></textarea>
+  </div>
 
-  <p><label for="titulo">Título</label></p>
-  <p><input type="text" name="titulo" size="60" /></p>
-
-  <p><label for="importancia">Importância</label></p>
-  <p><input type="number" name="importancia" max="5" min="1" size="1" /></p>
-
-  <p><label for="texto">Texto da Nota</label></p>
-  <p><textarea rows="5" cols="57" name="texto"></textarea></p>
-  
-  <button type="submit">Criar</button>
+  <div>
+    <button class="btn btn-primary" type="submit">Criar</button>
+    <a href="/" class="btn btn-secondary" role="a">Cancelar</a>
+  </div>
 </form>

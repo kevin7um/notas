@@ -1,3 +1,17 @@
+<nav class="navbar">
+  <div class="container-fluid justify-content-start">
+    <span class="navbar-brand mb-0 h1">Notas</span>
+    <div class="" id="navbarNav">
+      <ul class="navbar-nav d-flex flex-row gap-3">
+        <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="/sobre" class="nav-link">Sobre</a></li>
+        <li class="nav-item"><a href="/nota/cria" class="nav-link">Criar nota</a></li>
+        <li class="nav-item"><a href="/nota/cria/teste" class="nav-link">Criar nota de teste</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
 <h2>Consulta a Informações da Nota</h2>
 <br>
 <p><b>{{titulo}}</b></p>
@@ -5,7 +19,25 @@
 <p><b>Chave: </b>{{chave}}</p>
 <p><b>Importância: </b> {{importancia}}</p>
 <hr>
-<a href="/nota/deleta/{{chave}}">Deletar</a> 
-| <a href="/nota/altera/{{chave}}">Alterar</a>
+<a href="/nota/altera/{{chave}}" role="button" class="btn btn-primary">Alterar</a>
+<a href="/nota/deleta/{{chave}}" role="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#ModalExclusao">Deletar</a> 
 <br><br><br>
 <a href="/">Voltar</a>
+
+<div class="modal" tabindex="-1" id="ModalExclusao">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Exclusão de Nota</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Deseja excluir a nota: {{titulo}}?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <a href="/nota/deleta/{{chave}}" role="button" class="btn btn-danger">Excluir</a>
+      </div>
+    </div>
+  </div>
+</div>

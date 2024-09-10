@@ -44,7 +44,7 @@ exports.consulta = async function (req, res) {
     nota.lida = true;
  
     //atualização no banco de dados
-    await notas.atualiza(nota.chave, nota.titulo, nota.texto, nota.importancia, nota.lida)
+    await notas.atualiza(nota)
     
     contexto = {
         titulo_pagina: "Consulta a Nota",
@@ -103,7 +103,7 @@ exports.lida = async function (req, res) {
     nota.lida = true;
 
     //atualização no banco de dados
-    await notas.atualiza(nota.chave, nota.titulo, nota.texto, nota.importancia, nota.lida)
+    await notas.atualiza(nota)
 
 
     // redireciona para a página principal
@@ -117,7 +117,7 @@ exports.naolida = async function (req, res) {
     nota.lida = false;
 
     //atualização no banco de dados
-    await notas.atualiza(nota.chave, nota.titulo, nota.texto, nota.importancia, nota.lida)
+    await notas.atualiza(nota)
 
 
     // redireciona para a página principal

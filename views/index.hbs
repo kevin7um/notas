@@ -1,43 +1,60 @@
 <nav class="navbar">
-  <div class="container-fluid justify-content-start">
-    <span class="navbar-brand mb-0 h1">Notas</span>
-    <div class="" id="navbarNav">
-      <ul class="navbar-nav d-flex flex-row gap-3">
-        <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
-        <li class="nav-item"><a href="/sobre" class="nav-link">Sobre</a></li>
-        <li class="nav-item"><a href="/nota/cria" class="nav-link">Criar nota</a></li>
-        <li class="nav-item"><a href="/nota/cria/teste" class="nav-link">Criar nota de teste</a></li>
-      </ul>
-    </div>
-  </div>
+	<div class="container-fluid justify-content-start">
+		<span class="navbar-brand mb-0 h1">
+			<i class="bi bi-stickies"></i>
+			Notas
+		</span>
+		<div class="" id="navbarNav">
+			<ul class="navbar-nav d-flex flex-row gap-3">
+				<li class="nav-item"><a href="/" class="nav-link">
+						<i class="bi bi-house"></i>
+						Home
+					</a></li>
+				<li class="nav-item"><a href="/sobre" class="nav-link">
+						<i class="bi bi-info-square"></i>
+						Sobre
+					</a></li>
+				<li class="nav-item"><a href="/nota/cria" class="nav-link">
+						<i class="bi bi-plus-square"></i>
+						Criar nota
+					</a></li>
+				<li class="nav-item"><a href="/nota/cria/teste" class="nav-link">
+						<i class="bi bi-clipboard2-plus"></i>
+						Criar nota de teste
+					</a></li>
+			</ul>
+		</div>
+	</div>
 </nav>
 
 {{#if notas}}
-  <table class="table table-hover">
-    <thead>
-      <tr class="table-primary text-center">
-        <th style="width: 100px;">Chave</th>
-        <th>Título</th>
-        <th style="width: 100px;">Alterar Status</th>
-      </tr>
-    </thead>
-    <tbody>
-      {{#each notas}}
-      <tr>
-        {{#if this.lida}}
-          <td style="text-align: center;">{{this.chave}}</td>
-          <td><a href="/nota/consulta/{{this.chave}}">{{this.titulo}}</a></td>
-          <td style="text-align: center;"><a href="/nota/naolida/{{this.chave}}">não lida</a></td>
-        {{else}}
-          <td style="text-align: center;"><b>{{this.chave}}</b></td>
-          <td><a href="/nota/consulta/{{this.chave}}"><b>{{this.titulo}}</b></a></td>
-          <td style="text-align: center;"><b><a href="/nota/lida/{{this.chave}}">lida</a></b></td>
-        {{/if}}
-      </tr>
-      {{/each}}
-    </tbody>
-  </table>
+	<div class="row row-header text-center">
+		<div class="col-2 d-none d-lg-block">Chave</div>
+		<div class="col-12 col-md-8">Título</div>
+		<div class="col-4 col-lg-2 d-none d-md-block">Alterar Status</div>
+	</div>
+	{{#each notas}}
+		<div class="row text-center">
+			{{#if this.lida}}
+				<div class="col-2 d-none d-lg-block" style="text-align: center;">{{this.chave}}</div>
+				<div class="col-12 col-md-8 text-start"><a
+						href="/nota/consulta/{{this.chave}}"
+					>{{this.titulo}}</a></div>
+				<div class="col-4 col-lg-2 d-none d-md-block" style="text-align: center;"><a
+						href="/nota/naolida/{{this.chave}}"
+					><i class="bi bi-envelope-fill"></i></a></div>
+			{{else}}
+				<div class="col-2 d-none d-lg-block" style="text-align: center;"><b
+					>{{this.chave}}</b></div>
+				<div class="col-12 col-md-8 text-start"><a href="/nota/consulta/{{this.chave}}"><b
+						>{{this.titulo}}</b></a></div>
+				<div class="col-4 col-lg-2 d-none d-md-block" style="text-align: center;"><b><a
+							href="/nota/lida/{{this.chave}}"
+						><i class="bi bi-envelope-open"></i></a></b></div>
+			{{/if}}
+		</div>
+	{{/each}}
 {{else}}
-  <h3>Não tem nehuma nota cadastrada</h3>
-  <a href="nota/cria">Cadastrar nova nota</a>
+	<h3>Não tem nehuma nota cadastrada</h3>
+	<a href="nota/cria">Cadastrar nova nota</a>
 {{/if}}

@@ -2,7 +2,6 @@ table, th, td {
   border-collapse: collapse;
 }
 table {
-  margin-top: 80px;
   width: 80%;
   margin-left: auto;
   margin-right: auto;
@@ -10,4 +9,15 @@ table {
 
 .navbar{
   background-color: #cfe2ff;
+  margin-bottom: 80px;
 }
+
+.row{
+  border: solid 1px black;
+  padding: 4px;
+}
+
+.row-header{
+  background-color: #dbe4e7;
+}
+
