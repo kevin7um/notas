@@ -21,3 +21,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# arquivo de configuração do projeto VS Code
+1.ProjetoNodeJS.code-workspace
