@@ -6,5 +6,7 @@ var controllerIndex = require("../controller/controllerindex");
 router.get("/", controllerIndex.tela_principal);
 /* GET página sobre */
 router.get('/sobre', controllerIndex.sobre);
+/*GET página de ajuda */
+router.get("/ajuda", controllerIndex.ajuda);
 
 module.exports = router;
